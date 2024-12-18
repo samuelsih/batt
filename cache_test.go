@@ -20,7 +20,7 @@ func TestRedisImpl(t *testing.T) {
 	ctx := context.Background()
 
 	t.Run("plain", func(t *testing.T) {
-		err = c.Set(ctx, "foo", "bar")
+		err = c.Set(ctx, "foo", "bar", StoreForever)
 		require.NoError(t, err)
 
 		val, err := c.Get(ctx, "foo")
@@ -39,7 +39,7 @@ func TestRedisImpl(t *testing.T) {
 		inmem = &c
 		payload := some{Value: "something"}
 
-		err = InMemSetJSON(ctx, "eyoo", payload)
+		err = InMemSetJSON(ctx, "eyoo", payload, StoreForever)
 		require.NoError(t, err)
 
 		val, err := InMemGetJSON[some](ctx, "eyoo")
