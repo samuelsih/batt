@@ -3,6 +3,7 @@ module github.com/samuelsih/batt
 go 1.23.0
 
 require (
+	github.com/alitto/pond/v2 v2.1.5
 	github.com/go-playground/validator/v10 v10.23.0
 	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/ory/dockertest/v3 v3.11.0
